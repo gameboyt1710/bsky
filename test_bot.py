@@ -55,7 +55,7 @@ def test_formatting():
         'text': 'Apollo 11 astronauts Neil Armstrong and Buzz Aldrin became the first humans to walk on the Moon.'
     }
     formatted = format_event(test_event)
-    print(f"   Formatted event:\n   {formatted.replace(chr(10), chr(10) + '   ')}")
+    print(f"   Formatted event:\n   {formatted.replace('\n', '\n   ')}")
     
     # Test birth formatting
     print("\n2. Testing birth formatting...")
@@ -64,7 +64,7 @@ def test_formatting():
         'text': 'Marie Curie, Polish-French physicist and chemist.'
     }
     formatted = format_birth(test_birth)
-    print(f"   Formatted birth:\n   {formatted.replace(chr(10), chr(10) + '   ')}")
+    print(f"   Formatted birth:\n   {formatted.replace('\n', '\n   ')}")
     
     # Test death formatting
     print("\n3. Testing death formatting...")
@@ -73,7 +73,7 @@ def test_formatting():
         'text': 'Winston Churchill, British Prime Minister.'
     }
     formatted = format_death(test_death)
-    print(f"   Formatted death:\n   {formatted.replace(chr(10), chr(10) + '   ')}")
+    print(f"   Formatted death:\n   {formatted.replace('\n', '\n   ')}")
     
     return True
 

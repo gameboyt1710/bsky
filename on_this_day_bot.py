@@ -6,6 +6,7 @@ Fetches "On This Day" facts from Wikipedia and posts them to Bluesky.
 
 import os
 import sys
+import re
 import random
 import requests
 from datetime import datetime
@@ -174,7 +175,6 @@ def format_event(event: Dict) -> str:
     text = event.get('text', '')
     
     # Remove HTML tags if any
-    import re
     text = re.sub('<[^<]+?>', '', text)
     
     return f"📅 On This Day in {year}:\n\n{text}"
@@ -194,7 +194,6 @@ def format_birth(birth: Dict) -> str:
     text = birth.get('text', '')
     
     # Remove HTML tags if any
-    import re
     text = re.sub('<[^<]+?>', '', text)
     
     return f"🎂 Born On This Day in {year}:\n\n{text}"
@@ -214,7 +213,6 @@ def format_death(death: Dict) -> str:
     text = death.get('text', '')
     
     # Remove HTML tags if any
-    import re
     text = re.sub('<[^<]+?>', '', text)
     
     return f"🕊️ Died On This Day in {year}:\n\n{text}"
